@@ -1,0 +1,207 @@
+@import '../variables.less';
+
+/* Journal Archive Page */
+.atarax-journal-archive {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+
+  .journal-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    .journal-title {
+      font-family: @font-serif;
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .journal-subtitle {
+      font-family: @font-sans;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: lighten(@text-color, 25%);
+    }
+  }
+
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .archive-card {
+    text-decoration: none;
+    color: @text-color;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid @border-color;
+    background-color: @bg-oatmeal;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: @accent-color;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 1px solid @border-color;
+    }
+
+    .article-info {
+      padding: 30px;
+
+      .article-date {
+        font-family: @font-sans;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: @accent-color;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .article-title {
+        font-family: @font-serif;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 0 12px 0;
+        line-height: 1.4;
+      }
+
+      .article-summary {
+        font-family: @font-sans;
+        font-size: 13px;
+        line-height: 1.6;
+        color: lighten(@text-color, 15%);
+        margin-bottom: 20px;
+      }
+
+      .article-link {
+        font-family: @font-sans;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-bottom: 1px solid @text-color;
+        padding-bottom: 2px;
+        align-self: flex-start;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+/* Journal Detail Page */
+.atarax-journal-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: @font-sans;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: @accent-color-dark;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: @text-color;
+    }
+  }
+
+  .article-header {
+    margin-bottom: 40px;
+
+    .article-date {
+      font-family: @font-sans;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: @accent-color;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .article-title {
+      font-family: @font-serif;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: @text-color;
+      margin-bottom: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .article-cover {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border: 1px solid @border-color;
+    margin-bottom: 50px;
+  }
+
+  .article-body-content {
+    font-family: @font-sans;
+    font-size: 15px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: lighten(@text-color, 10%);
+
+    h1, h2, h3, h4 {
+      font-family: @font-serif;
+      color: @text-color;
+      font-weight: 400;
+      margin: 40px 0 20px 0;
+      letter-spacing: 1px;
+    }
+
+    h3 {
+      font-size: 20px;
+      border-bottom: 1px solid @border-color;
+      padding-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    ul, ol {
+      margin-bottom: 24px;
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

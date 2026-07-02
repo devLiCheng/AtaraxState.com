@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "日常佩戴",
+    "journal": "宁静志",
+    "cart": "购物袋",
+    "lang": "English"
+  },
+  "home": {
+    "slogan": "灵魂的宁静，不被打扰的状态",
+    "subSlogan": "在喧嚣的世界中，手腕上的这串珠子，是你保持内心宁静的锚点。",
+    "viewCollection": "探索系列",
+    "featuredProducts": "精选物件",
+    "featuredJournal": "静思专栏",
+    "footerText": "© 2026 AtaraxState. All rights reserved. 灵魂之锚。"
+  },
+  "pdp": {
+    "addToBag": "加入购物袋",
+    "outOfStock": "已售罄",
+    "story": "物之灵感",
+    "details": "规格细节",
+    "care": "保养指南",
+    "added": "已成功加入购物袋",
+    "priceSymbol": "¥"
+  },
+  "cart": {
+    "title": "购物袋",
+    "empty": "您的购物袋还是空的",
+    "subtotal": "小计",
+    "checkout": "去结算",
+    "remove": "移除",
+    "close": "关闭"
+  },
+  "checkout": {
+    "title": "极简结算",
+    "name": "收货人姓名",
+    "phone": "联系电话",
+    "address": "收货地址",
+    "submit": "确认并付款",
+    "processing": "处理中...",
+    "success": "付款成功",
+    "successDesc": "您的订单已生成。内心重归宁静。",
+    "orderNo": "订单号"
+  },
+  "journal": {
+    "title": "宁静志",
+    "subtitle": "关于美学、生活与内心秩序的沉淀。",
+    "readMore": "阅读全文",
+    "back": "返回列表",
+    "publishedAt": "发布于"
+  }
+}

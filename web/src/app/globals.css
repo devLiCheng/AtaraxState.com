@@ -1,0 +1,43 @@
+/* Base Reset and Variables for AtaraxState.com */
+
+:root {
+  --bg-color: #F4F3F0;
+  --bg-oatmeal: #EAE8E3;
+  --text-color: #2A2A2A;
+  --accent-color: #8C7D6C;
+  --accent-color-dark: #5A5A5A;
+  --border-color: #D3D3D3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color-dark);
+}

@@ -1,0 +1,73 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id          Int         @id @default(autoincrement())
+  nameZh      String      @db.VarChar(255)
+  nameEn      String      @db.VarChar(255)
+  price       Decimal     @db.Decimal(10, 2)
+  storyZh     String      @db.Text
+  storyEn     String      @db.Text
+  detailsZh   String      @db.Text // JSON or line-separated details
+  detailsEn   String      @db.Text // JSON or line-separated details
+  careZh      String      @db.Text
+  careEn      String      @db.Text
+  images      String      @db.Text // Comma separated image paths or JSON
+  category    String      @db.VarChar(100)
+  stock       Int         @default(99)
+  createdAt   DateTime    @default(now())
+  orderItems  OrderItem[]
+}
+
+model Article {
+  id          Int      @id @default(autoincrement())
+  titleZh     String   @db.VarChar(255)
+  titleEn     String   @db.VarChar(255)
+  summaryZh   String   @db.Text
+  summaryEn   String   @db.Text
+  contentZh   String   @db.LongText
+  contentEn   String   @db.LongText
+  coverImage  String   @db.VarChar(500)
+  slug        String   @unique @db.VarChar(255)
+  keywords    String   @db.VarChar(255) // SEO keywords
+  createdAt   DateTime @default(now())
+}
+
+model Order {
+  id              Int         @id @default(autoincrement())
+  orderNo         String      @unique @db.VarChar(100)
+  customerName    String      @db.VarChar(255)
+  customerPhone   String      @db.VarChar(50)
+  customerAddress String      @db.Text
+  totalAmount     Decimal     @db.Decimal(10, 2)
+  status          String      @default("PENDING") @db.VarChar(50) // PENDING, PAID, SHIPPED, COMPLETED
+  createdAt       DateTime    @default(now())
+  orderItems      OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  quantity  Int
+  price     Decimal @db.Decimal(10, 2)
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique @db.VarChar(100)
+  password  String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+}

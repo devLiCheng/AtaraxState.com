@@ -1,0 +1,207 @@
+@import '../../app/variables.less';
+
+.atarax-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(244, 243, 240, 0.85); // Warm white background with opacity
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid @border-color;
+  transition: all 0.3s ease;
+
+  .header-container {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+
+  .brand-logo {
+    font-family: @font-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    
+    a {
+      color: @text-color;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    a {
+      font-family: @font-sans;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: @text-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: @text-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: @accent-color-dark;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    .mobile-lang-btn {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      display: none; // Hidden by default on mobile
+      
+      &.mobile-open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background-color: @bg-color;
+        border-bottom: 1px solid @border-color;
+        padding: 20px 40px;
+        gap: 20px;
+        z-index: 49;
+
+        a {
+          font-size: 15px;
+          width: 100%;
+          padding: 8px 0;
+        }
+
+        .mobile-lang-btn {
+          display: block;
+          background: none;
+          border: none;
+          color: @accent-color;
+          font-family: @font-sans;
+          font-size: 13px;
+          letter-spacing: 1.5px;
+          padding: 8px 0;
+          cursor: pointer;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: @text-color;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      display: block;
+      order: 1;
+    }
+  }
+
+  .brand-logo {
+    @media (max-width: 768px) {
+      order: 2;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      order: 3;
+      gap: 16px;
+    }
+
+    .lang-toggle-btn {
+      background: none;
+      border: none;
+      color: @text-color;
+      font-family: @font-sans;
+      font-size: 12px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: @accent-color;
+      }
+
+      @media (max-width: 768px) {
+        display: none; // Show inside menu on mobile
+      }
+    }
+
+    .cart-trigger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: @text-color;
+      position: relative;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: @accent-color;
+      }
+
+      .cart-badge {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        background-color: @text-color;
+        color: @bg-color;
+        font-family: @font-sans;
+        font-size: 9px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+@import './variables.less';
+
+.atarax-home-page {
+  width: 100%;
+
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 64px); // Screen height minus header
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(42, 42, 42, 0.2); // subtle dark overlay
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 800px;
+      color: @bg-color; // Warm white text on dark hero image
+
+      .hero-title {
+        font-family: @font-serif;
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        margin-bottom: 24px;
+        line-height: 1.2;
+
+        @media (max-width: 768px) {
+          font-size: 32px;
+          letter-spacing: 2px;
+        }
+      }
+
+      .hero-subtitle {
+        font-family: @font-sans;
+        font-size: 15px;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+        opacity: 0.9;
+        font-weight: 300;
+
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
+      }
+
+      .hero-btn {
+        display: inline-block;
+        border: 1px solid @bg-color;
+        color: @bg-color;
+        text-decoration: none;
+        font-family: @font-sans;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 14px 36px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: @bg-color;
+          color: @text-color;
+        }
+      }
+    }
+  }
+
+  /* Quote Section (Aesop style breath room) */
+  .quote-section {
+    padding: 120px 40px;
+    background-color: @bg-color;
+    text-align: center;
+    border-bottom: 1px solid @border-color;
+
+    .quote-content {
+      max-width: 700px;
+      margin: 0 auto;
+
+      .quote-text {
+        font-family: @font-serif;
+        font-size: 24px;
+        font-style: italic;
+        line-height: 1.8;
+        letter-spacing: 1px;
+        color: lighten(@text-color, 10%);
+        margin-bottom: 24px;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+      }
+
+      .quote-author {
+        font-family: @font-sans;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: @accent-color;
+      }
+    }
+  }
+
+  /* Featured Products (Art Exhibition style) */
+  .products-section {
+    padding: 100px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    border-bottom: 1px solid @border-color;
+
+    @media (max-width: 768px) {
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      font-family: @font-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  /* Journal Section */
+  .journal-section {
+    padding: 100px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: @bg-color;
+
+    @media (max-width: 768px) {
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      font-family: @font-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .journal-card {
+      text-decoration: none;
+      color: @text-color;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid @border-color;
+      background-color: @bg-oatmeal;
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-color: @accent-color;
+      }
+
+      .article-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-bottom: 1px solid @border-color;
+      }
+
+      .article-info {
+        padding: 30px;
+
+        .article-date {
+          font-family: @font-sans;
+          font-size: 11px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: @accent-color;
+          margin-bottom: 12px;
+        }
+
+        .article-title {
+          font-family: @font-serif;
+          font-size: 18px;
+          font-weight: 400;
+          margin: 0 0 12px 0;
+          line-height: 1.4;
+        }
+
+        .article-summary {
+          font-family: @font-sans;
+          font-size: 13px;
+          line-height: 1.6;
+          color: lighten(@text-color, 15%);
+          margin-bottom: 20px;
+        }
+
+        .article-link {
+          font-family: @font-sans;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          border-bottom: 1px solid @text-color;
+          padding-bottom: 2px;
+          align-self: flex-start;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

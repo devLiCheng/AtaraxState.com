@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Collection",
+    "journal": "Journal",
+    "cart": "Bag",
+    "lang": "中文"
+  },
+  "home": {
+    "slogan": "Crafted for the everyday.",
+    "subSlogan": "In a noisy world, this bracelet on your wrist is the anchor to maintain your inner peace (Ataraxia).",
+    "viewCollection": "View Collection",
+    "featuredProducts": "Selected Objects",
+    "featuredJournal": "Readings",
+    "footerText": "© 2026 AtaraxState. All rights reserved. Anchor of Peace."
+  },
+  "pdp": {
+    "addToBag": "Add to Bag",
+    "outOfStock": "Out of Stock",
+    "story": "The Story",
+    "details": "Details",
+    "care": "Care Instructions",
+    "added": "Added to bag",
+    "priceSymbol": "$"
+  },
+  "cart": {
+    "title": "Shopping Bag",
+    "empty": "Your shopping bag is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "close": "Close"
+  },
+  "checkout": {
+    "title": "Minimal Checkout",
+    "name": "Receiver Name",
+    "phone": "Contact Phone",
+    "address": "Shipping Address",
+    "submit": "Confirm and Pay",
+    "processing": "Processing...",
+    "success": "Payment Successful",
+    "successDesc": "Your order has been placed. Peace is restored.",
+    "orderNo": "Order No."
+  },
+  "journal": {
+    "title": "The Journal",
+    "subtitle": "Essays on aesthetics, life, and the order of the soul.",
+    "readMore": "Read Article",
+    "back": "Back to List",
+    "publishedAt": "Published on"
+  }
+}

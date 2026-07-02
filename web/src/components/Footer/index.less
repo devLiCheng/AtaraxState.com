@@ -1,0 +1,116 @@
+@import '../../app/variables.less';
+
+.atarax-footer {
+  width: 100%;
+  background-color: @bg-oatmeal;
+  border-top: 1px solid @border-color;
+  padding: 80px 0 40px 0;
+  color: @text-color;
+
+  .footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 80px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid @border-color;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .footer-brand {
+    h4 {
+      font-family: @font-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      margin: 0 0 16px 0;
+    }
+
+    .brand-philosophy {
+      font-family: @font-sans;
+      font-size: 13px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      color: lighten(@text-color, 15%);
+      max-width: 400px;
+    }
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    .link-group {
+      h5 {
+        font-family: @font-sans;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0 0 20px 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 12px;
+
+          a {
+            font-family: @font-sans;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: lighten(@text-color, 10%);
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: @accent-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .copyright {
+      font-family: @font-sans;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: lighten(@text-color, 25%);
+      margin: 0;
+    }
+
+    .footer-extra {
+      font-family: @font-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: lighten(@text-color, 20%);
+    }
+  }
+}
