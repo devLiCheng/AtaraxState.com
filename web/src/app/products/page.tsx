@@ -4,7 +4,7 @@ import prisma from '../../utils/prisma';
 import { getTranslations } from '../../utils/i18nServer';
 import ProductCard from '../../components/ProductCard';
 
-export const revalidate = 0; // Force SSR to reflect MySQL edits instantly
+export const dynamic = 'force-dynamic'; // Force SSR to reflect MySQL edits instantly
 
 interface PageProps {
   searchParams: Promise<{ category?: string }>;

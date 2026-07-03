@@ -4,7 +4,7 @@ import prisma from '../utils/prisma';
 import { getTranslations } from '../utils/i18nServer';
 import ProductCard from '../components/ProductCard';
 
-export const revalidate = 0; // Force SSR to reflect MySQL changes instantly
+export const dynamic = 'force-dynamic'; // Force SSR to reflect MySQL changes instantly
 
 export default async function Home() {
   const { lang, translations } = await getTranslations();

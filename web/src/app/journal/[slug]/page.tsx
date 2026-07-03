@@ -5,7 +5,7 @@ import prisma from '../../../utils/prisma';
 import { getTranslations } from '../../../utils/i18nServer';
 import { ArrowLeft } from 'lucide-react';
 
-export const revalidate = 0; // Force SSR to reflect MySQL changes instantly
+export const dynamic = 'force-dynamic'; // Force SSR to reflect MySQL changes instantly
 
 interface PageProps {
   params: Promise<{ slug: string }>;
