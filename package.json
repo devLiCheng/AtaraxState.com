@@ -1,0 +1,14 @@
+{
+  "name": "ataraxstate-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix web && npm install --prefix admin",
+    "dev:web": "npm run dev --prefix web",
+    "dev:admin": "npm run dev --prefix admin",
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:admin\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
